@@ -11,6 +11,7 @@ jobs:
           name: Deploy
           command: |
             cat importmap.json
+            echo ""
             echo "Updating import map"
             http PATCH $DEPLOYER_HOST/import-map.json\?env=$DEPLOYER_ENV -a $DEPLOYER_USERNAME:$DEPLOYER_PASSWORD --check-status < importmap.json
 workflows:
